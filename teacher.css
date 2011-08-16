@@ -63,7 +63,9 @@
   line-height: 1.5em;
   margin: -28px 0 0 -10px;
   box-shadow: 0 0 50px #333;
+  -o-box-shadow: 0 0 50px #333; -moz-box-shadow: 0 0 50px #333; -webkit-box-shadow: 0 0 50px #333;
   border-radius: 5px;
+  -o-border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
   zoom: 1;
   *border: 2px solid #333;
 }

@@ -169,14 +169,17 @@
             },2000)
           }
         }
+        function appendNewLineTo(e){
+          $("<li />").attr({ 'contentEditable': true})
+                      .addClass("empty")
+                      .html("Click here to create a talking point!")
+                      .appendTo(e);
+        }
         function insertAnotherLineIfNeeded(e, includeSelf){
           var points = $(e).siblings('li');
           if(includeSelf !== false) points = points.add(e);
           if(points.length < 3 && points.filter(".empty").length == 0){
-           $("<li />").attr({ 'contentEditable': true})
-                      .addClass("empty")
-                      .html("Click here to create a talking point!")
-                      .insertAfter(points.last());
+            appendNewLineTo($(e).parent());
           }
         }
         function isEmpty(e){
@@ -218,7 +221,8 @@
                 .onResponse(function(response){
                   var view = self.viewEngine.render("teacher-class", { klass: c, teacher: teacher, points: response.points })
                       .appendTo(classesContainer);
-                  insertAnotherLineIfNeeded(view.find("li"));
+                  var points = view.find("li");
+                  points.length ? insertAnotherLineIfNeeded(view.find("li")) : appendNewLineTo(view.find("ul"));
 		  if( $.browser.msie && $.browser.version < 7 ){
 		    $(".handle",view).hover(
 		      function(){ $(this).addClass('hover'); },
@@ -244,6 +248,12 @@
             name: "Mr. Maroney",
             classes: [
               { name: "First Period", handle: "xyz123" }
+            ]
+          },
+          ddimsdale: {
+            name: "Mr. Dimsdale",
+            classes: [
+              { name: "My Class", handle: "akhd" }
             ]
           }
         };
