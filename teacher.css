@@ -1,4 +1,40 @@
+#bd ul {
+  list-style: none;
+}
+#bd li { padding-left: 20px; background: url('img/check.gif') 0 50% no-repeat; }
+.saving #bd li:focus {
+  background-image: none;
+}
+#bd li.empty { color: #f0df23; background: none; }
+#classes { border-bottom:  1px solid #aaa; padding-bottom: 5px; margin-bottom: 5px;}
+#bd a { color: #aaa; font-weight: bold; font-size: 1.2em; text-decoration: none; }
 
-li:empty { color: #555 }
+.login {
+  width: 330px;
+  margin: 50px auto;
+  font-size: 2em;
+  line-height: 1.5em;
+}
+.login label {
+  width: 153px;
+  text-align: right;
+  padding-right: 5px;
+  display: inline-block;
+}
+.login input {
+  width: 160px;
+  display: inline-block;
+  padding: 3px;
+  background: none;
+  border: 1px solid #aaa;
+  border-width: 0 0 1px 0;
+  color: #fff;
+  font-size: 1em;
+}
+.login button {
+  float: right;
+}
+/*
 li:focus { border:  1px solid #DEDCDA;  padding: 3px 5px; }
 li:empty:hover {border:  1px solid #DEDCDA; padding:  3px 5px; }
+*/

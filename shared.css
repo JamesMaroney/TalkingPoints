@@ -47,23 +47,30 @@ table {
 	border-spacing: 0;
 }
 
-body { font-size: 13px; background: url('img/body.png'); font-family: arial; color: #3A3A3A; }
-#pg { width: 640px; margin: 0 auto; padding-top: 50px;     }
-#hd { text-align: center; border-bottom:  1px solid #aaa;}
-#bd {padding: 0 20px 30px;}
+body { font-size: 13px; font-family: arial; color: #fff; }
+#pg { width: 612px; height: 500px; margin: 0 auto; padding: 242px 44px 0;  background: url('img/chalkboard.jpg') 50% 50% no-repeat;
+    font-family: 'Annie Use Your Telescope'/* 'Waiting for the Sunrise' */, cursive, arial; position: relative; }
+input {font-family: 'Annie Use Your Telescope'/* 'Waiting for the Sunrise' */, cursive, arial;}
+#hd { text-align: center; }
+#bd {padding: 0 20px 30px; position: relative;}
 #ft {
   border-top:  1px solid #aaa; padding: 5px; font-size: 12px; text-align: center; position: fixed; bottom: 0; width: 100%;
   background:  #fff;
 }
-h1,h2,h3 { font-family: 'Love Ya Like A Sister', cursive, arial;   }
-h1,h2,h3,p { padding: 0; margin:  0; }
+/* h1,h2,h3 { font-family: 'Love Ya Like A Sister', cursive, arial;   } */
+h1,h3,p { padding: 0; margin:  0; font-weight: bold;}
 h1 { font-size: 2em; padding-bottom: 3px; }
-h2 { font-size: 1.7em; }
+h2 { position: absolute; top: -43px; right: 30px; font-size: 1.2em; text-align: right;}
 h3 { font-size: 1.3em; padding: 12px 0 5px; }
 p { }
 
-#bd ul { list-style: disc; padding: 5px 5px 5px 20px; }
+#bd ul { list-style: disc; padding: 5px 5px 5px 0; font-size: 1.2em; }
 #bd li { padding: 4px 6px; outline: 0; }
 
 #ft p { display: block; margin-right: 15px; }
 #ft a { padding:  0 5px; display: inline-block; margin: 0 5px; }
+
+iframe { position: fixed; bottom: 0; display:none; }
+
+#status { position: absolute; top: 217px; right: 60px; color: #ccc; font-size: 10px; display: none; }
+.saving #status { display: block; }

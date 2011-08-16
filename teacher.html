@@ -2,40 +2,283 @@
 <html>
   <head>
     <title>Talking Points</title>
-    <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister&v2' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister&v2' rel='stylesheet' type='text/css'> -->
+    <link href='http://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise|Annie+Use+Your+Telescope' rel='stylesheet' type='text/css'>
     <link href="shared.css" rel="stylesheet" type="text/css" />
     <link href="teacher.css" rel="stylesheet" type="text/css" />
     <link href="themes.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="js/IE9.js"></script>
+    <![endif]-->
   </head>
-  <body class="theme-notepad">
+  <body>
 
     <div id="pg">
       <div id="hd">
         <h1>Talking Points</h1>
       </div>
-      <div id="bd">
-        <h2>May 12, 2001</h2>
-        <h3>Period 1 - American History</h3>
-        <ul>
-          <li contenteditable="true">Lorem ipsum dolor sit amet</li>
-          <li contenteditable="true">consectetur adipisicing elit, sed do eiusmod</li>
-          <li contenteditable="true"></li>
-        </ul>
-
-        <h3>Period 2 - World History</h3>
-        <ul>
-          <li contenteditable="true"></li>
-        </ul>
-      </div>
+      <div id="bd"></div>
     </div>
     
     <div id="ft">
-      <a href="#">theme</a>
       <a href="#">classes</a>
       <a href="#">feedback</a>
     </div>
 
+    <script type="text/x-jquery-tmpl" id="teacher-panel">
+      <h2>${teacher}<br />${date}</h2>
+      <div class="classes">
+        <!-- <li contenteditable="true" class="empty">Click here to create a talking point!</li> -->
+      </div>
+      <a href="javascript:void(0)" id="addClass">+ Add a Class</a>
+    </script>
 
+    <script type="text/x-jquery-tmpl" id="teacher-class">
+      <h3>${class.name}</h3>
+      <ul>
+        {{each(i,point) class.points}}
+          <li contenteditable="true">${point}</li>
+        {{/each}}
+      </ul>
+    </script>
+
+    <script type="text/x-jquery-tmpl" id="login">
+      <form class="login" action="javascript:void(0)">
+        <label for="teacher-name">Teacher's Name:</label><input type="text" id="teacher-name" /><br />
+        <label for="teacher-pass">Password:</label><input type="password" id="teacher-pass" /><br />
+        <button>Sign In</button>
+      </form>
+    </script>
+
+
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+    <script type="text/javascript" src="js/jquery-1.4.2-min.js"></script>
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript">
+      var AppRouter = function(cookies, win, ControllerFactory, server){
+        this.routeData = { cookies: cookies };
+        this.window = win;
+        this.controllerFactory = new ControllerFactory(this, server);
+        this.server = server;
+      }
+      AppRouter.prototype.boot = function(){
+        this.controllerFactory.getController("Login")["index"]();
+        return this;
+      }
+      AppRouter.prototype.goTo = function(){
+        this.controllerFactory.getController("Teacher")["index"]();
+      }
+
+
+
+
+      var Cookies = {
+        get: function(name){ },
+        add: function(name,value,timeout){ },
+        remove: function(name) { }
+      }
+
+
+
+
+
+
+      var ViewEngine = {
+        render: function(viewName, model, viewData){
+          return new View($("#"+viewName), model, viewData);
+        }
+      }
+
+      var View = function(viewName, model, viewData){
+        this.viewName = viewName;
+        this.model = model;
+        this.viewData = viewData;
+      }
+      View.prototype.into = function(e){
+        return $(e).html("").append(this.parse());
+      }
+      View.prototype.parse = function(html){
+        return $.tmpl(this.viewName, this.model, this.viewData);
+      }
+      View.prototype.appendTo = function(e){
+        return $(e).append(this.parse());
+      }
+
+
+
+
+
+
+      var ControllerFactory = function(appRouter, server){
+        this.appRouter = appRouter;
+        this.server = server;
+      }
+      ControllerFactory.prototype.getController = function(name){
+        return new window[name + "Controller"](this.appRouter, ViewEngine, this.server);
+      }
+
+      var LoginController = function(appRouter, viewEngine, server){
+        this.viewEngine = viewEngine;
+        this.router = appRouter;
+        this.server = server;
+      }
+      LoginController.prototype.index = function(){
+        var view = this.viewEngine.render("login").into("#bd");
+        $("input",view).first().focus();
+        var self = this;
+        $('form',view).bind('submit', function(){
+          var f = { name: $('#teacher-name',view), pass: $('#teacher-pass',view) }
+          if(!f.name.val()){ f.name.focus(); return false; }
+          if(!f.pass.val()){ f.pass.focus(); return false; }
+          
+          self.server.checkLogin(f.name.val(),f.pass.val())
+            .onResponse(function(response){
+              if( response.success )
+                self.router.goTo("Teacher")
+            });
+        })
+      }
+
+
+
+
+
+      
+      var TeacherController = function(appRouter, viewEngine, server){
+        this.viewEngine = viewEngine;
+        this.router = appRouter;
+        this.server = server;
+      }
+      TeacherController.prototype.index = function(){
+        /* Helper functions */
+        var saveTimeout;
+        function scheduleSave(el){
+          var body = $("body").addClass("saving");
+          if(!saveTimeout) {
+            saveTimeout = setTimeout(function(){
+              body.removeClass("saving");
+              saveTimeout = undefined;
+            },2000)
+          }
+        }
+        function insertAnotherLineIfNeeded(e, includeSelf){
+          var points = $(e).siblings('li');
+          if(includeSelf !== false) points = points.add(e);
+          if(points.length < 3 && points.filter(".empty").length == 0){
+           $("<li />").attr({ 'contentEditable': true})
+                      .addClass("empty")
+                      .html("Click here to create a talking point!")
+                      .insertAfter(points.last());
+          }
+        }
+        function isEmpty(e){
+          return $(e).text().replace(/\s+/,'') === ""
+        }
+
+        function bindEvents(container){
+          $(".empty", container)
+          .live("focus", function(){
+            $(this).html(" ").removeClass("empty").focus();
+          })/*
+          .live("blur", function(){
+            if(isEmpty(this)) $(this).html("Click here to create a talking point!").addClass("empty")
+          })*/
+        $("li", container)
+          .live("keyup", function(){
+            e = $(this);
+            e.text() ? e.removeClass("empty") : e.addClass("empty");
+            insertAnotherLineIfNeeded(this);
+            scheduleSave(this);
+          })
+          .live("blur", function(){
+            if(isEmpty(this)){
+              insertAnotherLineIfNeeded(this, false);
+              $(this).remove();
+            }
+            scheduleSave();
+          })
+        }
+
+        var self = this;
+        this.server.getTeacherInfo()
+          .onResponse(function(response){
+            var classesContainer = self.viewEngine.render("teacher-panel", {date: new Date().toDateString(), teacher: response.name})
+                                                  .into("#bd").find(".classes");
+            bindEvents(classesContainer);
+            _.each(response.classes, function(c){
+              self.server.getTalkingPoints(c.handle)
+                .onResponse(function(response){
+                  c.points = response.points;
+                  var view = self.viewEngine.render("teacher-class", { class: c }).appendTo(classesContainer);
+                  insertAnotherLineIfNeeded(view.find("li"));
+                })
+            });
+          })
+      }
+
+
+
+
+
+
+
+
+
+      var LocalServer = function(){
+        teachers = {
+          james: {
+            name: "Mr. Maroney",
+            classes: [
+              { name: "First Period", handle: "xyz123" }
+            ]
+          }
+        };
+        talkingPoints = {
+          xyz123: [ "first point", "second point" ]
+        }
+        user = undefined;
+
+        window.dump = function(){
+          console.log( { teachers: teachers, talkingPoints: talkingPoints, user: user } )
+        }
+
+        function w(func){
+          return function(){
+            var result = func.apply(undefined, arguments);
+            return { onResponse: function(f){ f(result); } }
+          }
+        }
+
+        this.checkLogin = w(function(name,pass) {
+          if(!teachers[name]){
+            teachers[name] = { name: name, classes: [ ] }
+          }
+          user = name;
+          return { success: true };
+        })
+        this.getTalkingPoints = w(function(handle) {
+          return {
+            points: talkingPoints[handle]
+          };
+        })
+        this.getTeacherInfo = w(function(){
+          return teachers[user];
+        })
+        /*
+        this.saveTalkingPoints = w(function(handle,points) {
+          _.detect(talkingPoints[user].classes,
+              function(c){
+                return c.handle === handle;
+              }).points = points;
+        })
+        */
+      }
+
+
+      
+      new AppRouter(Cookies, window, ControllerFactory, new LocalServer()).boot();
+    </script>
   </body>
 </html>
