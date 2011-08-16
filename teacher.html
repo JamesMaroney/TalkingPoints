@@ -42,7 +42,7 @@
     <script type="text/x-jquery-tmpl" id="login">
       <form class="login" action="javascript:void(0)">
         <label for="teacher-name">Teacher's Name:</label><input type="text" id="teacher-name" /><br />
-        <label for="teacher-pass">Password:</label><input type="password" id="teacher-pass" /><br />
+        <label for="teacher-pass">Password:</label><input type="password" class="password" id="teacher-pass" /><br />
         <button>Sign In</button>
       </form>
     </script>
@@ -219,6 +219,12 @@
                   var view = self.viewEngine.render("teacher-class", { klass: c, teacher: teacher, points: response.points })
                       .appendTo(classesContainer);
                   insertAnotherLineIfNeeded(view.find("li"));
+		  if( $.browser.msie && $.browser.version < 7 ){
+		    $(".handle",view).hover(
+		      function(){ $(this).addClass('hover'); },
+		      function(){ $(this).removeClass('hover'); }
+		    );
+		  }
                 })
             });
           })
