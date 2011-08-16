@@ -58,17 +58,27 @@ input {font-family: 'Annie Use Your Telescope'/* 'Waiting for the Sunrise' */, c
   background:  #fff;
 }
 /* h1,h2,h3 { font-family: 'Love Ya Like A Sister', cursive, arial;   } */
+h1:hover,h2:hover,h3:hover,p:hover,ul:hover,li:hover,*:hover{ cursor: default; }
+input:hover { cursor: text; }
+button:hover { cursor: hand; cursor: pointer; }
 h1,h3,p { padding: 0; margin:  0; font-weight: bold;}
 h1 { font-size: 2em; padding-bottom: 3px; }
 h2 { position: absolute; top: -43px; right: 30px; font-size: 1.2em; text-align: right;}
 h3 { font-size: 1.3em; padding: 12px 0 5px; }
-p { }
+strong { font-weight: bold; }
 
 #bd ul { list-style: disc; padding: 5px 5px 5px 0; font-size: 1.2em; }
 #bd li { padding: 4px 6px; outline: 0; }
 
 #ft p { display: block; margin-right: 15px; }
-#ft a { padding:  0 5px; display: inline-block; margin: 0 5px; }
+#ft a {
+  padding:  0 5px;
+  margin: 0 5px;
+  display:-moz-inline-stack;
+  display:inline-block;
+  zoom:1;
+  *display:inline;
+}
 
 iframe { position: fixed; bottom: 0; display:none; }
 

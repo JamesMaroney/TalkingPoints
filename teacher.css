@@ -1,40 +1,75 @@
 #bd ul {
   list-style: none;
 }
-#bd li { padding-left: 20px; background: url('img/check.gif') 0 50% no-repeat; }
+#bd li { padding-left: 20px; background: url('img/check.gif') 0 50% no-repeat; cursor: text; }
 .saving #bd li:focus {
   background-image: none;
 }
 #bd li.empty { color: #f0df23; background: none; }
-#classes { border-bottom:  1px solid #aaa; padding-bottom: 5px; margin-bottom: 5px;}
+.classes { padding-bottom: 5px; margin-bottom: 5px;}
 #bd a { color: #aaa; font-weight: bold; font-size: 1.2em; text-decoration: none; }
 
 .login {
-  width: 330px;
+  width: 350px;
   margin: 50px auto;
   font-size: 2em;
-  line-height: 1.5em;
+  line-height: 2em;
+  text-align: right;
 }
 .login label {
   width: 153px;
   text-align: right;
-  padding-right: 5px;
-  display: inline-block;
+  padding-right: 20px;
+  display:-moz-inline-stack;
+  display:inline-block;
+  zoom:1;
+  *display:inline;
+  vertical-align: middle;
 }
 .login input {
   width: 160px;
-  display: inline-block;
   padding: 3px;
   background: none;
   border: 1px solid #aaa;
-  border-width: 0 0 1px 0;
+  border-width: 0 0 0 0;
   color: #fff;
   font-size: 1em;
+  display:-moz-inline-stack;
+  display:inline-block;
+  zoom:1;
+  *display:inline;
+  vertical-align: middle;
 }
 .login button {
-  float: right;
+  line-height: 1.5em;
 }
-/*
-li:focus { border:  1px solid #DEDCDA;  padding: 3px 5px; }
-li:empty:hover {border:  1px solid #DEDCDA; padding:  3px 5px; }
-*/
+
+.handle {
+  font-weight: normal;
+  font-size: 0.8em;
+}
+
+.handle .instructions {
+  display: none;
+  width: 350px;
+  background: white;
+  padding: 10px;
+  position: absolute;
+  color: black;
+  font-weight: normal;
+  font-family: Arial;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: -28px 0 0 -10px;
+  box-shadow: 0 0 50px #333;
+  border-radius: 5px;
+}
+.handle:hover {
+  cursor: default;
+}
+.handle:hover .instructions {
+  display:-moz-inline-stack;
+  display:inline-block;
+  zoom:1;
+  *display:inline;
+}
