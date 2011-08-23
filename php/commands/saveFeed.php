@@ -10,7 +10,7 @@ $date = date("m-d-Y");
 
 require("php/couch.php");
 
-$couch = new couchClient("http://merdstrembeentsendshoste:DPJAg3RCBVINOGKYuAGapJLV@james-maroney.cloudant.com/", "talkingpoints");
+$couch = new couchClient($config['db_host'], $config['db_database']);
 
 $feed = new stdClass();
 $feed->points = $points;

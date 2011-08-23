@@ -77,8 +77,18 @@ TeacherController.prototype.index = function(){
     $("#bd").prepend("<span class='status'>Submissions are no longer being accepted for the day.</span>")
   }
 
+  function setupReloadForNewDay(){
+    var tomorrow = new Date();
+    tomorrow.setHours(24); tomorrow.setMinutes(0); tomorrow.setSeconds(0); tomorrow.setMilliseconds(0);
+    setTimeout(function(){
+      console.log("re-rendering the teacher controller");
+      self.router.goTo("Teacher")
+    }, tomorrow - new Date());
+  }
+
   checkServerStatus();
   setInterval(checkServerStatus,60000);
+  setupReloadForNewDay();
 
   this.server.getTeacherInfo()
     .success(function(teacher){

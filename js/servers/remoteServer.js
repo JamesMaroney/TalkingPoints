@@ -10,7 +10,7 @@ var RemoteServer = function(){
     return $.ajax("?task=userByTokenCredentials", { data: { username: username, token: token }, cache: false , dataType: "json", success: function(u){ user = u }, converters: { "text json": function(input){ return jQuery.parseJSON(input.replace(/<script.*$/,'')) } } });
   }
   this.getTalkingPoints = function(handle){
-    return $.ajax("?task=getTalkingPoints", { data: { handle: handle}, cache: false, dataType: "json", success: function(p){ talkingPoints[handle] = p.points.join("|")}, converters: { "text json": function(input){ return jQuery.parseJSON(input.replace(/<script.*$/,'')) } } } );
+    return $.ajax("?task=getTalkingPoints", { data: { handle: handle}, cache: false, dataType: "json", success: function(p){ talkingPoints[handle] = (p.points || []).join("|")}, converters: { "text json": function(input){ return jQuery.parseJSON(input.replace(/<script.*$/,'')) } } } );
   }
   this.getTeacherInfo = function(){
     if(!user) throw Error("Teacher info cannot be retrieved because a user is not logged in");
