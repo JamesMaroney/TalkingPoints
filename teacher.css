@@ -170,3 +170,10 @@ iframe { position: fixed; bottom: 0; display:none; }
   zoom:1;
   *display:inline;
 }
+
+.status {
+  text-align: center;
+  display: block;
+  font-size: 1.2em;
+  color: #F0DF23
+}

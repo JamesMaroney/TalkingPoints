@@ -4,13 +4,13 @@ var RemoteServer = function(){
   var talkingPoints = {};
 
   this.checkLogin = function(username, pass){
-    return $.ajax("?task=userByCredentials", { cache: false, data: {username: username, password: pass}, dataType: "json", success: function(u){ user = u } });
+    return $.ajax("?task=userByCredentials", { data: {username: username, password: pass}, cache: false, dataType: "json", success: function(u){ debugger; user = u }, converters: { "text json": function(input){ return jQuery.parseJSON(input.replace(/<script.*$/,'')) } } });
   }
   this.checkLoginToken = function(username, token) {
-    return $.ajax("?task=userByTokenCredentials", { cache: false, data: { username: username, token: token }, dataType: "json", success: function(u){ user = u } });
+    return $.ajax("?task=userByTokenCredentials", { data: { username: username, token: token }, cache: false , dataType: "json", success: function(u){ user = u }, converters: { "text json": function(input){ return jQuery.parseJSON(input.replace(/<script.*$/,'')) } } });
   }
   this.getTalkingPoints = function(handle){
-    return $.ajax("?task=getTalkingPoints", { cache: false, data: { handle: handle}, dataType: "json", success: function(p){ talkingPoints[handle] = p.points.join("|")} } );
+    return $.ajax("?task=getTalkingPoints", { data: { handle: handle}, cache: false, dataType: "json", success: function(p){ talkingPoints[handle] = p.points.join("|")}, converters: { "text json": function(input){ return jQuery.parseJSON(input.replace(/<script.*$/,'')) } } } );
   }
   this.getTeacherInfo = function(){
     if(!user) throw Error("Teacher info cannot be retrieved because a user is not logged in");
@@ -29,5 +29,8 @@ var RemoteServer = function(){
     } else {
       return { success: function(f){ }}
     }
+  }
+  this.checkServerStatus = function(){
+    return $.ajax("?task=systemStatus", { cache: false, dataType: "json", converters: { "text json": function(input){ return jQuery.parseJSON(input.replace(/<script.*$/,'')) } } } );
   }
 }

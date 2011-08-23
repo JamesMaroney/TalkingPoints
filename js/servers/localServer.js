@@ -51,4 +51,7 @@ var LocalServer = function(){
     talkingPoints[handle] = points;
     return {  };
   })
+  this.checkServerStatus = w(function(){
+    return { acceptingSubmissions: true }
+  })
 }

@@ -1,4 +1,9 @@
 <?php
+if(strtotime($config['cutoff_submissions_at']) < time()){
+  echo '{ "success": false, "error": { "message": "The submission period for the day has passed. The cutoff time is '.$config['cutoff_submissions_at'].'" } }';
+  exit(0);
+}
+
 $points = empty($_REQUEST['points']) ? array() : $_REQUEST['points'];
 $handle = preg_replace('/[^a-z0-9]/i',"",$_REQUEST['handle']);
 $date = date("m-d-Y");

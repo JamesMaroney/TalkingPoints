@@ -7,6 +7,8 @@ TeacherController.prototype.index = function(){
   /* Helper functions */
   var saveTimeout;
   var server = this.server;
+  var self = this;
+  
   function scheduleSave(ul, handle){
     if(!saveTimeout) {
       saveTimeout = setTimeout(function(){
@@ -55,7 +57,28 @@ TeacherController.prototype.index = function(){
       })
   }
 
-  var self = this;
+  function checkServerStatus(){
+    self.server.checkServerStatus()
+      .success(function(status){
+          if(!status.acceptingSubmissions){
+            disableSubmissions()
+          }
+        })
+  }
+
+  var disabled = false;
+  function disableSubmissions(){
+    if(disabled) return;
+    disabled = true;
+    $("#bd ul").unbind();
+    $("#bd *[contenteditable=true]").attr('contenteditable', false);
+    $("#bd .empty").remove();
+    $("#bd").prepend("<span class='status'>Submissions are no longer being accepted for the day.</span>")
+  }
+
+  checkServerStatus();
+  setInterval(checkServerStatus,5000);
+
   this.server.getTeacherInfo()
     .success(function(teacher){
       var classesContainer = self.viewEngine.render("teacher-panel", {date: new Date().toDateString(), teacher: teacher})
