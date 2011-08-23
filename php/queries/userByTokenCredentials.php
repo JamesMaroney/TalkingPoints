@@ -1,6 +1,12 @@
 <?php
 $username = preg_replace('/[^a-zA-Z0-9._+\-]/i',"",$_REQUEST['username']);
-$password = md5($_REQUEST['password']);
+$token = $_REQUEST['token'];
+
+$checkToken = md5("k232jaslkadf90".$username);
+
+if($checkToken != $token){
+  echo "{}"; exit();
+}
 
 require("php/couch.php");
 
@@ -12,10 +18,6 @@ if(empty($results->rows)){
 }
 
 $user = $results->rows[0]->value;
-
-if($user->password != $password){
-  echo "{}"; exit();
-}
 
 unset($user->password);
 $user->token = md5("k232jaslkadf90".$user->username);
