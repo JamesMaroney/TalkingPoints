@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="config.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="34" selection-start="58" selection-end="58" vertical-scroll-proportion="0.091726616">
+            <state line="3" column="34" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacherController.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="teacherController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers/teacherController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="22" selection-start="2370" selection-end="2370" vertical-scroll-proportion="0.0">
+            <state line="95" column="89" selection-start="3291" selection-end="3291" vertical-scroll-proportion="0.51978415">
               <folding />
             </state>
           </provider>
@@ -122,9 +122,9 @@
         <option value="$PROJECT_DIR$/js/servers/localServer.js" />
         <option value="$PROJECT_DIR$/js/servers/remoteServer.js" />
         <option value="$PROJECT_DIR$/php/queries/systemStatus.php" />
-        <option value="$PROJECT_DIR$/js/controllers/teacherController.js" />
         <option value="$PROJECT_DIR$/teacher.css" />
         <option value="$PROJECT_DIR$/php/config.php" />
+        <option value="$PROJECT_DIR$/js/controllers/teacherController.js" />
       </list>
     </option>
   </component>
@@ -495,13 +495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/teacherController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="22" selection-start="2370" selection-end="2370" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/teacher.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="175" column="16" selection-start="4585" selection-end="4623" vertical-scroll-proportion="0.0">
@@ -511,7 +504,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="34" selection-start="58" selection-end="58" vertical-scroll-proportion="0.091726616">
+        <state line="3" column="34" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/teacherController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="89" selection-start="3291" selection-end="3291" vertical-scroll-proportion="0.51978415">
           <folding />
         </state>
       </provider>

@@ -19,7 +19,7 @@ TeacherController.prototype.index = function(){
     }
   }
   function appendNewLineTo(e){
-    $("<li />").attr({ 'contentEditable': true})
+    $("<li />").attr({ 'contentEditable': !submissionsDisabled})
                 .addClass("empty")
                 .html("Click here to create a talking point!")
                 .appendTo(e);
@@ -36,6 +36,7 @@ TeacherController.prototype.index = function(){
   }
 
   function bindEvents(container, handle){
+    if(submissionsDisabled) return;
     $(".empty", container)
       .live("focus", function(){
         $(this).html(" ").removeClass("empty").focus();
@@ -66,10 +67,10 @@ TeacherController.prototype.index = function(){
         })
   }
 
-  var disabled = false;
+  var submissionsDisabled = false;
   function disableSubmissions(){
-    if(disabled) return;
-    disabled = true;
+    if(submissionsDisabled) return;
+    submissionsDisabled = true;
     $("#bd ul").unbind();
     $("#bd *[contenteditable=true]").attr('contenteditable', false);
     $("#bd .empty").remove();
@@ -77,7 +78,7 @@ TeacherController.prototype.index = function(){
   }
 
   checkServerStatus();
-  setInterval(checkServerStatus,5000);
+  setInterval(checkServerStatus,60000);
 
   this.server.getTeacherInfo()
     .success(function(teacher){
@@ -92,6 +93,7 @@ TeacherController.prototype.index = function(){
                 .into(view.find("ul"));
 
             bindEvents(pointsView, c.handle);
+            if(submissionsDisabled) pointsView.find("li").attr('contenteditable', false);
             var points = view.find("li");
             points.length ? insertAnotherLineIfNeeded(view.find("li")) : appendNewLineTo(view.find("ul"));
 
