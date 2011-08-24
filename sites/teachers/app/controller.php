@@ -8,11 +8,12 @@ $APP = APP;
 define("SUITE", dirname(dirname(dirname(APP))));
 $SUITE = SUITE;
 
+set_include_path( implode(PATH_SEPARATOR, array(APP,"$APP/lib","$SUITE/shared","$SUITE/shared/lib")) );
+spl_autoload_register();
+
 /* =======================
    Shared infrastructure
    ----------------------- */
-set_include_path( implode(PATH_SEPARATOR, array(APP,"$APP/lib","$SUITE/shared","$SUITE/shared/lib")) );
-spl_autoload_register();
 require_once("underscore.php");
 
 /* =======================

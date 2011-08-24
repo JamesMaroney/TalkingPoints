@@ -7,11 +7,11 @@ class IntakeService implements IHandleIntake {
   }
 
   public function getNewSubscriptionRequests(){
-    echo "Getting new subscription requests\n";
+    echo "Checking for new subscription requests\n";
     $requests = array();
     foreach($this->channels as $channel) {
       $requests = array_merge($requests, $channel->getNewSubscriptionRequests());
     }
-    return array();
+    return $requests;
   }
 }

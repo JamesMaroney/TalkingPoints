@@ -8,7 +8,7 @@ $points = empty($_REQUEST['points']) ? array() : $_REQUEST['points'];
 $handle = preg_replace('/[^a-z0-9]/i',"",$_REQUEST['handle']);
 $date = date("m-d-Y");
 
-require("$APP/couch.php");
+require_once("couch.php");
 
 $couch = new couchClient($config->database->connectionString, $config->database->name);
 

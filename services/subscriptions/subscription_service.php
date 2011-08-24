@@ -1,4 +1,7 @@
-<?
+<?php
+/* ====================
+   Path Bootstrapping
+   -------------------- */
 define("SVC", dirname(__FILE__));
 $SVC = SVC;
 
@@ -15,24 +18,31 @@ spl_autoload_register();
 $config = new ConfigManager(SUITE, SVC);
 
 
+/* ==========================
+   Intake Channels Configuration
+   -------------------------- */
 
 $intake = new IntakeService(
-              new GmailIntakeService(
-                $config->intake_handlers->Gmail->username,
-                $config->intake_handlers->Gmail->password,
-                $config->intake_handlers->Gmail->label )
+              new ImapIntakeService(
+                $config->intake_handlers->Imap->username,
+                $config->intake_handlers->Imap->password,
+                $config->intake_handlers->Imap->mailbox )
           );
 
+
+/* ======================
+   Main Run Loop
+   ---------------------- */
 while( true ){
 
   foreach( $intake->getNewSubscriptionRequests() as $request){
-    $subscription = $request->generateSubscription();
+    if(!$request) continue;
+    echo "processing request: "; var_dump($request);
 
-    if(!SubscriptionService::contains($subscription)){
-      SubscriptionService::add($subscription);
+    if(!SubscriptionService::contains($request)){
+      SubscriptionService::add($request);
     }
   }
 
-
-  sleep(5);
+  sleep(300);
 }

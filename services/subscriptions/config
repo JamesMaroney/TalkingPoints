@@ -1,9 +1,13 @@
 {
   "intake_handlers": {
-    "Gmail": {
+    "Imap": {
       "username": "james.maroney",
       "password": "g9iko9ikogl3wse",
-      "label": "TalkingPointsSubscriptions"
+      "mailbox": "TalkingPointsSubscriptions"
     }
+  },
+  "database": {
+    "connectionString": "http://thearriarelystelyingethi:nyKfEJvWdFmq0RAo8Ckfywyy@james-maroney.cloudant.com",
+    "name": "subscriptions-dev"
   }
 }

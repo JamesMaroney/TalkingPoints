@@ -1,7 +1,7 @@
 <?php
 $handle = preg_replace('/[^a-z0-9]/i',"",$_REQUEST['handle']);
 
-require("$APP/couch.php");
+require_once("couch.php");
 
 $couch = new couchClient($config->database->connectionString, $config->database->name);
 $results = $couch->key(array(date("m-d-Y"), $handle))->getView("views","pointsByDateAndHandle");

@@ -1,4 +1,6 @@
-<?
+<?php
+
+require_once("couch.php");
 
 class SubscriptionService {
 
@@ -8,7 +10,11 @@ class SubscriptionService {
   }
 
   public static function Add($subscription){
+    global $config;
     echo "adding subscription to system\n";
+    var_dump($subscription);
+    $couch = new couchClient($config->database->connectionString, $config->database->name);
+    $couch->storeDoc($subscription);
     return $subscription;
   }
 }

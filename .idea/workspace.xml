@@ -23,37 +23,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="subscription_service.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="controller.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/teachers/app/controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subscription_service.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/services/subscriptions/subscription_service.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="40" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
+            <state line="45" column="0" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.83515286">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/subscriptions/config">
+      <file leaf-file-name="couch.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shared/lib/couch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="42" selection-start="128" selection-end="154" vertical-scroll-proportion="0.0">
+            <state line="4" column="44" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gmailintakeservice.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/gmailintakeservice.php">
+      <file leaf-file-name="imapintakeservice.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/imapintakeservice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="33" selection-start="507" selection-end="507" vertical-scroll-proportion="0.3765227">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subscriptionrequest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/subscriptionrequest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="48" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
+            <state line="16" column="19" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -62,7 +62,34 @@
       <file leaf-file-name="subscriptionservice.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/subscriptionservice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="46" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0">
+            <state line="11" column="41" selection-start="215" selection-end="227" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="subscriptionrequest.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/subscriptionrequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="78" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/teachers/app/config">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="3" selection-start="3" selection-end="164" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -71,16 +98,7 @@
       <file leaf-file-name="intakeservice.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/intakeservice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="81" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ihandleintake.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/ihandleintake.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="44" selection-start="52" selection-end="78" vertical-scroll-proportion="0.0">
+            <state line="9" column="22" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,22 +118,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/sites/teachers/app/config" />
-        <option value="$PROJECT_DIR$/sites/teachers/app/queries/getTalkingPoints.php" />
-        <option value="$PROJECT_DIR$/sites/teachers/app/queries/userByCredentials.php" />
         <option value="$PROJECT_DIR$/sites/teachers/app/queries/userByTokenCredentials.php" />
-        <option value="$PROJECT_DIR$/sites/teachers/app/commands/saveFeed.php" />
         <option value="$PROJECT_DIR$/sites/teachers/app/queries/systemStatus.php" />
         <option value="$PROJECT_DIR$/shared/configmanager.php" />
         <option value="$PROJECT_DIR$/services/subscriptions/domain/ihandleintake.php" />
         <option value="$PROJECT_DIR$/services/subscriptions/domain/emailintakeservice.php" />
-        <option value="$PROJECT_DIR$/services/subscriptions/subscription_service.php" />
-        <option value="$PROJECT_DIR$/services/subscriptions/config" />
-        <option value="$PROJECT_DIR$/services/subscriptions/domain/subscriptionrequest.php" />
-        <option value="$PROJECT_DIR$/services/subscriptions/domain/subscriptionservice.php" />
-        <option value="$PROJECT_DIR$/services/subscriptions/domain/intakeservice.php" />
         <option value="$PROJECT_DIR$/services/subscriptions/lib/gmailreader.php" />
         <option value="$PROJECT_DIR$/services/subscriptions/domain/gmailintakeservice.php" />
+        <option value="$PROJECT_DIR$/services/subscriptions/config" />
+        <option value="$PROJECT_DIR$/sites/teachers/app/controller.php" />
+        <option value="$PROJECT_DIR$/sites/teachers/app/commands/saveFeed.php" />
+        <option value="$PROJECT_DIR$/shared/lib/couch.php" />
+        <option value="$PROJECT_DIR$/services/subscriptions/domain/subscriptionservice.php" />
+        <option value="$PROJECT_DIR$/services/subscriptions/domain/subscriptionrequest.php" />
+        <option value="$PROJECT_DIR$/services/subscriptions/domain/imapintakeservice.php" />
+        <option value="$PROJECT_DIR$/services/subscriptions/domain/intakeservice.php" />
+        <option value="$PROJECT_DIR$/services/subscriptions/subscription_service.php" />
       </list>
     </option>
   </component>
@@ -211,6 +229,32 @@
               <option name="myItemId" value="sites" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="teachers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="commands" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TalkingPoints" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TalkingPoints" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -223,6 +267,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TalkingPoints" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TalkingPoints" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,16 +405,16 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873806" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19060332" sideWeight="0.6705491" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19060332" sideWeight="0.6712619" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294509" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -401,27 +463,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sites/teachers/app/queries/getTalkingPoints.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="87" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/teachers/app/queries/systemStatus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="47" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/teachers/app/queries/userByCredentials.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="87" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shared/configmanager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="35" selection-start="955" selection-end="955" vertical-scroll-proportion="0.40829694">
@@ -443,48 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sites/teachers/app/config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="31" selection-start="160" selection-end="160" vertical-scroll-proportion="0.055676855">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/subscriptions/config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="42" selection-start="128" selection-end="154" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sites/teachers/app/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="436" selection-end="564" vertical-scroll-proportion="0.3155022">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/subscriptions/subscription_service.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="40" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/subscriptionrequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="48" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/subscriptionservice.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="46" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/ihandleintake.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="44" selection-start="52" selection-end="78" vertical-scroll-proportion="0.0">
@@ -492,16 +491,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/intakeservice.php">
+    <entry file="file://$PROJECT_DIR$/config">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="81" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/gmailintakeservice.php">
+    <entry file="file://$PROJECT_DIR$/sites/teachers/app/config">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="33" selection-start="507" selection-end="507" vertical-scroll-proportion="0.3765227">
+        <state line="4" column="3" selection-start="3" selection-end="164" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/subscriptions/config">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="4" selection-start="167" selection-end="167" vertical-scroll-proportion="0.12991266">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/teachers/app/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/lib/phpOnCouch/couch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shared/lib/couch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="44" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/teachers/app/commands/saveFeed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="87" selection-start="399" selection-end="514" vertical-scroll-proportion="0.22270742">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/subscriptionservice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="41" selection-start="215" selection-end="227" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/subscriptionrequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="78" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/imapintakeservice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="19" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/subscriptions/domain/intakeservice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="22" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/subscriptions/subscription_service.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.83515286">
           <folding />
         </state>
       </provider>
