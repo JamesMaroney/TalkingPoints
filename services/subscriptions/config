@@ -1,0 +1,9 @@
+{
+  "intake_handlers": {
+    "Gmail": {
+      "username": "james.maroney",
+      "password": "g9iko9ikogl3wse",
+      "label": "TalkingPointsSubscriptions"
+    }
+  }
+}

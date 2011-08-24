@@ -22,7 +22,6 @@ class ConfigManager {
       );
       $this->config = call_user_func_array( array("__", "extend"), $configContents);
     }
-
   }
 
   public function __get($key){
