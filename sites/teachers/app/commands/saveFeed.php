@@ -1,6 +1,6 @@
 <?php
-if(strtotime($config['cutoff_submissions_at']) < time()){
-  echo '{ "success": false, "error": { "message": "The submission period for the day has passed. The cutoff time is '.$config['cutoff_submissions_at'].'" } }';
+if(strtotime($config->timing->submission_cutoff) < time()){
+  echo '{ "success": false, "error": { "message": "The submission period for the day has passed. The cutoff time is '.$config->timing->submission_cutoff.'" } }';
   exit(0);
 }
 
@@ -8,9 +8,9 @@ $points = empty($_REQUEST['points']) ? array() : $_REQUEST['points'];
 $handle = preg_replace('/[^a-z0-9]/i',"",$_REQUEST['handle']);
 $date = date("m-d-Y");
 
-require("php/couch.php");
+require("$APP/couch.php");
 
-$couch = new couchClient($config['db_host'], $config['db_database']);
+$couch = new couchClient($config->database->connectionString, $config->database->name);
 
 $feed = new stdClass();
 $feed->points = $points;

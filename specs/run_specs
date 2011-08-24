@@ -1,0 +1,16 @@
+<?
+$SPECS = dirname(__FILE__);
+$SUITE = dirname($SPECS);
+$SHARED = "$SUITE/shared";
+
+set_include_path( implode(PATH_SEPARATOR, array($SHARED, "$SHARED/lib", $SPECS, "$SPECS/lib")) );
+spl_autoload_register();
+require_once("lib/pecs.php");
+require_once("underscore.php");
+
+foreach( glob("*/run_specs") as $runner ){
+  $pwd = getcwd();
+  chdir(dirname($runner));
+  require_once($runner);
+  chdir($pwd);
+}

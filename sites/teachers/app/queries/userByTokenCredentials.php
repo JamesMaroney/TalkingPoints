@@ -8,9 +8,9 @@ if($checkToken != $token){
   echo "{}"; exit();
 }
 
-require("php/couch.php");
+require("$APP/couch.php");
 
-$couch = new couchClient($config['db_host'], $config['db_database']);
+$couch = new couchClient($config->database->connectionString, $config->database->name);
 $results = $couch->key($username)->getView("views","teacherByUsername");
 
 if(empty($results->rows)){

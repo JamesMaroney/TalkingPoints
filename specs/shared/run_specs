@@ -1,0 +1,15 @@
+<?
+$previous_include_path = get_include_path();
+set_include_path("$SUITE/shared" . PATH_SEPARATOR . $previous_include_path );
+
+
+foreach( glob("*specs.php") as $spec ){
+  echo "running $spec";
+  describe($spec, function() use($spec){
+    require_once($spec);
+  });
+}
+\pecs\run();
+
+
+set_include_path($previous_include_path);
