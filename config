@@ -1,5 +1,6 @@
 {
   "timing": {
-    "submission_cutoff": 1600
+    "submission_cutoff": "4:40",
+    "distribution":  "8:00"
   }
 }

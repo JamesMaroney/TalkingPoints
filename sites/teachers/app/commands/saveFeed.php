@@ -4,6 +4,7 @@ if(strtotime($config->timing->submission_cutoff) < time()){
   exit(0);
 }
 
+// TODO: This is insecure. Handle should be pulled from session instead of request.
 $points = empty($_REQUEST['points']) ? array() : $_REQUEST['points'];
 $handle = preg_replace('/[^a-z0-9]/i',"",$_REQUEST['handle']);
 $date = date("m-d-Y");

@@ -48,7 +48,7 @@ table {
 }
 
 body { font-size: 13px; font-family: arial; color: #fff; }
-#pg { width: 612px; height: 500px; margin: 0 auto; padding: 90px 44px 0;  background: url('img/chalkboard.jpg') 50% -135px no-repeat;
+#pg { width: 612px; height: 500px; margin: 0 auto; padding: 72px 44px 0;  background: url('img/blackboard-new.jpg') 50% -135px no-repeat;
     font-family: 'Annie Use Your Telescope'/* 'Waiting for the Sunrise' */, cursive, arial; position: relative; }
 input {font-family: 'Annie Use Your Telescope'/* 'Waiting for the Sunrise' */, cursive, arial;}
 input.password { font-family: arial }

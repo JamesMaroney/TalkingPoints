@@ -30,7 +30,7 @@ class ImapIntakeService implements IHandleIntake {
     $emails = __::map($emailIds, function($id) use($mbox) {
                   return array(
                     "overview" => imap_fetch_overview($mbox, $id, 0),
-                    "body" => imap_fetchbody($mbox, $id, 2),
+                    "body" => strip_tags(imap_fetchbody($mbox, $id, 2)),
                     "date_pulled" => date("m-d-Y")
                   );
                 });

@@ -9,10 +9,11 @@ TeacherController.prototype.index = function(){
   var server = this.server;
   var self = this;
   
-  function scheduleSave(ul, handle){
+  function scheduleSave(ul){
     if(!saveTimeout) {
       saveTimeout = setTimeout(function(){
-        var points = $(ul).find("li").not(".empty").map(function(){ return $(this).text() }).get();
+        var handle = $(ul).data('handle'),
+            points = $(ul).find("li").not(".empty").map(function(){ return $(this).text() }).get();
         server.saveTalkingPoints(handle, points || []);
         saveTimeout = undefined;
       },2000)
@@ -35,7 +36,7 @@ TeacherController.prototype.index = function(){
     return $(e).text().replace(/\s+/,'') === ""
   }
 
-  function bindEvents(container, handle){
+  function bindEvents(container){
     if(submissionsDisabled) return;
     $(".empty", container)
       .live("focus", function(){
@@ -46,7 +47,7 @@ TeacherController.prototype.index = function(){
         e = $(this);
         e.text() ? e.removeClass("empty") : e.addClass("empty");
         insertAnotherLineIfNeeded(this);
-        scheduleSave($(this).parents('ul'), handle);
+        scheduleSave($(this).parents('ul'));
       })
       .live("blur", function(){
         var ul = $(this).parents('ul');
@@ -54,7 +55,7 @@ TeacherController.prototype.index = function(){
           insertAnotherLineIfNeeded(this, false);
           $(this).remove();
         }
-        scheduleSave(ul, handle);
+        scheduleSave(ul);
       })
   }
 
@@ -94,6 +95,7 @@ TeacherController.prototype.index = function(){
     .success(function(teacher){
       var classesContainer = self.viewEngine.render("teacher-panel", {date: new Date().toDateString(), teacher: teacher})
                                             .into("#bd").find(".classes");
+      bindEvents(classesContainer);
       _.each(teacher.classes, function(c){
         var view = self.viewEngine.render("teacher-class", { klass: c, teacher: teacher })
             .appendTo(classesContainer);
@@ -102,7 +104,6 @@ TeacherController.prototype.index = function(){
             var pointsView = self.viewEngine.render("class-points", { points: response.points })
                 .into(view.find("ul"));
 
-            bindEvents(pointsView, c.handle);
             if(submissionsDisabled) pointsView.find("li").attr('contenteditable', false);
             var points = view.find("li");
             points.length ? insertAnotherLineIfNeeded(view.find("li")) : appendNewLineTo(view.find("ul"));

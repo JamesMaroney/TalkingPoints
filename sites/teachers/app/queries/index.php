@@ -33,9 +33,11 @@
     </script>
 
     <script type="text/x-jquery-tmpl" id="teacher-class">
-      <h3>${klass.name} <span class="handle">instructions for parents &gt;<span class="instructions">To receive daily talking points from ${teacher.name},<br />text <strong>${klass.handle}</strong> to <strong>(404) 919-0173</strong><!-- or email<br /><strong>${klass.handle}</strong> to <strong>abc@xyz.com</strong> --><br />Visit www.xyz.com to learn more about Talking Points.</span></span></h3>
-      <ul data-handle="${klass.handle}">
-      </ul>
+      <div class="classContainer">
+          <h3>${klass.name} <span class="handle">instructions for parents &gt;<span class="instructions">To receive daily talking points from ${teacher.name},<br />text <strong>${klass.handle}</strong> to <strong>(404) 919-0173</strong><!-- or email<br /><strong>${klass.handle}</strong> to <strong>abc@xyz.com</strong> --><br />Visit www.xyz.com to learn more about Talking Points.</span></span></h3>
+          <ul data-handle="${klass.handle}">
+          </ul>
+      </div>
     </script>
 
     <script type="text/x-jquery-tmpl" id="class-points">

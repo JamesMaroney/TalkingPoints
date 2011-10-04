@@ -4,7 +4,7 @@ var RemoteServer = function(){
   var talkingPoints = {};
 
   this.checkLogin = function(username, pass){
-    return $.ajax("?task=userByCredentials", { data: {username: username, password: pass}, cache: false, dataType: "json", success: function(u){ debugger; user = u }, converters: { "text json": function(input){ return jQuery.parseJSON(input.replace(/<script.*$/,'')) } } });
+    return $.ajax("?task=userByCredentials", { data: {username: username, password: pass}, cache: false, dataType: "json", success: function(u){ user = u }, converters: { "text json": function(input){ return jQuery.parseJSON(input.replace(/<script.*$/,'')) } } });
   }
   this.checkLoginToken = function(username, token) {
     return $.ajax("?task=userByTokenCredentials", { data: { username: username, token: token }, cache: false , dataType: "json", success: function(u){ user = u }, converters: { "text json": function(input){ return jQuery.parseJSON(input.replace(/<script.*$/,'')) } } });
