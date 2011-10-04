@@ -1,0 +1,4 @@
+allow from all
+
+RewriteEngine On
+RewriteRule ^((?!www).*)$ www/$1 [QSA,L]

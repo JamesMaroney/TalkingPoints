@@ -1,0 +1,12 @@
+{
+  "databases": {
+      "subscriptions": {
+        "connectionString": "http://ascapalothwarappeopingic:cosm5bVKbXoGB4eIovVdR6Xw@james-maroney.cloudant.com",
+        "name": "subscriptions-dev"
+      },
+      "talkingpoints": {
+        "connectionString": "http://ascapalothwarappeopingic:cosm5bVKbXoGB4eIovVdR6Xw@james-maroney.cloudant.com",
+        "name": "talkingpoints-dev"
+      }
+  }
+}

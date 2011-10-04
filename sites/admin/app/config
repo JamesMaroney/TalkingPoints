@@ -1,0 +1,9 @@
+{
+  "database": {
+    "connectionString": "http://arstedgeninewouthemondle:8TDIG6SkqXASt7GwrII2wTrR@james-maroney.cloudant.com",
+    "name": "talkingpoints-dev"
+  },
+  "school": {
+      "name": "Woodbine Elementary"
+  }
+}

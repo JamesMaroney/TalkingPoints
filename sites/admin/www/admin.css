@@ -1,0 +1,100 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body { font-size: 13px; font-family: arial; color: #666; }
+
+#hd { background: #256188; color: #fff; padding:  10px 0; }
+.docwrap, #bd {width: 700px; margin:  0 auto; }
+#hd h1, #hd h2 { display: inline; font-size: 1.2em; }
+#nav { background: #eee; padding:  5px 10px; }
+#nav li { display: inline-block; padding: 5px 10px 5px 0; }
+#nav li.logout { float: right; }
+#nav a { color: #999; text-decoration: none; }
+#nav .active a, #nav a:hover { color: #256188; }
+
+#bd { width: 680px; padding:  10px; }
+
+p { padding-bottom: 1em; }
+.error {background: url('img/bullet_red.png') 0 4px no-repeat; padding: 5px 5px 5px 20px; }
+strong { font-weight: bold; }
+
+/* Login Page */
+#login {
+    border:  1px solid #aaa; box-shadow: 0 0 5px #999;
+    padding: 10px; width: 300px; margin: 100px auto;
+}
+#login label, #login input {
+   display: inline-block; vertical-align: middle;
+    margin-bottom: 5px;
+}
+#login label {
+    width: 90px; padding-right: 10px; text-align: right;
+}
+#login input {
+    padding:  3px;
+}
+#login .buttons {
+    text-align: right; border-top: 1px solid #aaa; margin-top: 15px; padding-top: 5px;
+}
+#login .error {
+    border-bottom: 1px solid #aaa; margin-bottom: 5px; text-align: left; padding-bottom: 10px;
+}
+
+/* Talking Points Page */
+
+p.status, #savePoints, #successMessage { padding: 5px 5px 5px 20px; background: 0 6px no-repeat; border:  1px solid #aaa; box-shadow: 0 0 5px #999;
+    margin:  5px 0 15px; line-height: 1.5em; }
+p.status-closed, p.status-pending { background-image: url('img/bullet_red.png'); }
+p.status-open { background-image: url('img/bullet_green.png'); }
+
+#savePoints, #successMessage { padding-left: 5px; position: fixed; bottom: -16px; background: #B9E096; color: #333; width: 680px; text-align: center; }
+#savePoints.error { background: #e0ad96; }
+
+#talkingPointsListing { margin-left: 20px; padding-bottom: 50px; }
+#talkingPointsListing li { padding:  5px 0; list-style: circle; }
